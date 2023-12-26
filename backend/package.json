@@ -1,0 +1,15 @@
+{
+  "name": "news-magazines-template",
+  "version": "1.0.0",
+  "description": "w",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "respond True"
+  },
+  "author": "Trupesh Savaliya",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
