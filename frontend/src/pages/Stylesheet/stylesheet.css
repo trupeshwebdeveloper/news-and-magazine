@@ -1,0 +1,8 @@
+.ratio-demo {
+  --img-ratio: 66%;
+}
+
+.HashtagDemo {
+  width: 170px;
+  --img-ratio: 29%;
+}

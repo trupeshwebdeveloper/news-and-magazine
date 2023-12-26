@@ -1,0 +1,52 @@
+export const abc = [
+  { key: 1 },
+  { key: 2 },
+  { key: 3 },
+  { key: 4 },
+  { key: 5 },
+  { key: 6 },
+  { key: 7 },
+  { key: 8 },
+  { key: 9 },
+  { key: 10 },
+];
+
+<Button className="w-10 h-10 items-center flex justify-center bg-gray rounded-xl p-0">
+  {Icons.arrowIcon}
+</Button>;
+
+{
+  MegaNewsTeam.map((content, index) => <div key={index}></div>);
+}
+
+1;
+2;
+3;
+4;
+5;
+6;
+7;
+8;
+9;
+10;
+11;
+12;
+13;
+14;
+15;
+16;
+17;
+18;
+19;
+20;
+21;
+22;
+23;
+24;
+25;
+26;
+27;
+28;
+29;
+30;
+31;

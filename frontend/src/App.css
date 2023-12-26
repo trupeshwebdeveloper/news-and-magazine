@@ -1,0 +1,157 @@
+@import 'assets/css/fonts.css';
+@import 'assets/css/responsive.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .style-guide-wrapper {
+    @apply flex justify-center items-center gap-8 p-5 mb-4 border border-solid border-primary;
+  }
+
+  .button {
+    @apply inline-flex items-center justify-center text-center text-xl gap-3 font-medium leading-5 capitalize py-4 px-8 rounded-xl transition-all ease-in-out duration-150 disabled:text-gray-75 disabled:pointer-events-none;
+  }
+
+  .btn-primary {
+    @apply bg-primary-75 text-white hover:bg-primary disabled:bg-gray;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-tinge border-solid border hover:border-primary hover:bg-primary-10 hover:text-primary disabled:bg-transparent;
+  }
+
+  .form-input {
+    @apply bg-gray p-4 outline-0 rounded-xl text-s border border-solid border-transparent text-dark min-h-[48px] w-full hover:border-tinge;
+  }
+
+  .icon-lable {
+    @apply p-2 rounded-xl
+  }
+
+  .title {
+    @apply font-normal leading-6 tracking-[0.15px]
+  }
+
+  .title {
+    @apply font-medium leading-6 tracking-[0.1px]
+  }
+
+  .style-color-circle {
+    @apply w-28 h-28 rounded-full justify-center items-center flex text-white
+  }
+
+  .ratio {
+    @apply before:block before:pb-[100%] relative w-full
+  }
+
+  .ratio img {
+    @apply absolute h-full w-full top-0 left-0 object-cover
+  }
+
+  .FooterExtraContainer {
+    @apply relative before:-z-20 before:absolute before:w-2/5 before:bg-gray before:top-0 before:right-full before:translate-x-2/4 before:h-full
+  }
+
+  .section-mb {
+    @apply mb-16
+  }
+
+}
+
+@layer base {
+  html {
+    font-family: theme('fontFamily.sans'), system-ui;
+    color: theme('colors.black');
+    font-size: var(--rem);
+  }
+
+  .container {
+    margin: 0 auto;
+    max-width: 94.5rem !important;
+    padding: 0 12px;
+  }
+
+  h1,
+  .h1 {
+    @apply text-7xl;
+  }
+
+  h2,
+  .h2 {
+    @apply text-6xl;
+  }
+
+  h3,
+  .h3 {
+    @apply text-5xl;
+  }
+
+  h4,
+  .h4 {
+    @apply text-4xl;
+  }
+
+  h5,
+  .h5 {
+    @apply text-2xl;
+  }
+
+  h6,
+  .h6 {
+    @apply text-s;
+  }
+
+  h5.xl,
+  .h5.xl {
+    @apply text-xl
+  }
+
+  p,
+  .p {
+    @apply text-3xl
+  }
+
+  .p.small,
+  p.small {
+    @apply text-small
+  }
+
+  .base {
+    @apply text-base
+  }
+}
+
+.mainHasTag {
+  --img-ratio: 28%;
+}
+
+.no-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.grid-categories-four {
+  grid-area: 1 / 4 / 3 / 5;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  @apply w-12 bg-gray h-12 flex-[0_0_auto] flex items-center justify-center ease-linear transition-all;
+  font-size: 0 !important;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 9 13' fill='none'%3E%3Cpath d='M2 13C1.71875 13 1.46875 12.9062 1.28125 12.7188C0.875 12.3438 0.875 11.6875 1.28125 11.3125L5.5625 7L1.28125 2.71875C0.875 2.34375 0.875 1.6875 1.28125 1.3125C1.65625 0.90625 2.3125 0.90625 2.6875 1.3125L7.6875 6.3125C8.09375 6.6875 8.09375 7.34375 7.6875 7.71875L2.6875 12.7188C2.5 12.9062 2.25 13 2 13Z' fill='%233E3232'/%3E%3C/svg%3E") !important;
+  width: 51px;
+  height: 51px;
+  flex: 0 0 auto;
+}
+
+.swiper-button-prev::after {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+
+.swiper-button-disabled {
+  @apply hidden !important
+}
