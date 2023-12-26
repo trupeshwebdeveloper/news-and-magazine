@@ -35,7 +35,7 @@ export const TextEditor = ({
               <Button
                 disabled
                 key={index}
-                type="primary"
+                variant="primary"
                 className="bg-gray py-3 pl-4 pr-7 text-black-75 hover:text-white transition-all ease-linear"
               >
                 {content.PictureIcon}

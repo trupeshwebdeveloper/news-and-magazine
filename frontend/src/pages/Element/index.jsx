@@ -1,4 +1,5 @@
 import { HasTagPosts } from "./HasTagPosts";
+import { NewPost } from "./NewPosts";
 import { RecentPosts } from "./RecentPosts";
 
 export const Element = () => {
@@ -6,6 +7,7 @@ export const Element = () => {
     <>
       <HasTagPosts />
       <RecentPosts />
+      <NewPost />
     </>
-  )
+  );
 };

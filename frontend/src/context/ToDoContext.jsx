@@ -1,14 +1,8 @@
 import { createContext, useContext } from "react";
 
 export const ToDoContext = createContext({
-  todos: [
-    {
-      key: 1,
-      Task: "msg",
-      completed: true,
-    },
-  ],
-  addTask: (Task) => {},
+  todos: [],
+  addTask: (task) => {},
   editTask: (key, Task) => {},
   deleteTask: (key) => {},
   completedTask: (key) => {},

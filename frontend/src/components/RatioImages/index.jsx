@@ -1,4 +1,4 @@
-import clsx from "clsx"
+import clsx from "clsx";
 
 export const RatioImages = ({
   src,
@@ -8,13 +8,13 @@ export const RatioImages = ({
   ...rest
 }) => {
   return (
-    <div className={clsx(RatioImagesParentClass, 'ratio')}>
+    <div className={clsx(RatioImagesParentClass, "ratio")}>
       <img
         src={src}
         alt={alt}
-        className={RatioImagesClass}
+        className={clsx(RatioImagesClass, "rounded-xl")}
         {...rest}
       />
     </div>
-  )
-}
+  );
+};

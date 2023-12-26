@@ -21,11 +21,19 @@
     @apply bg-transparent border-tinge border-solid border hover:border-primary hover:bg-primary-10 hover:text-primary disabled:bg-transparent;
   }
 
+  .btn-third {
+    @apply bg-gray border border-transparent border-solid hover:bg-transparent hover:border-gray py-3 px-6
+  }
+
+  .btn-third-small {
+    @apply bg-gray p-2
+  }
+
   .form-input {
     @apply bg-gray p-4 outline-0 rounded-xl text-s border border-solid border-transparent text-dark min-h-[48px] w-full hover:border-tinge;
   }
 
-  .icon-lable {
+  .icon-label {
     @apply p-2 rounded-xl
   }
 

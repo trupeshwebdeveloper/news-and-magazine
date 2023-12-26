@@ -39,7 +39,7 @@ export const ProfileEdit = () => {
           </div>
         </div>
         <div className="flex justify-end mt-6">
-          <Button className='py-3 px-4' type='primary'>{Icons.SaveIcon}save</Button>
+          <Button className='py-3 px-4' variant='primary'>{Icons.SaveIcon}save</Button>
         </div>
       </Container>
     </section>

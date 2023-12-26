@@ -1,34 +1,33 @@
-import clsx from "clsx"
+import clsx from "clsx";
 
 export const Button = ({
   className,
   children,
   type,
-  disabled,
   id,
   value,
+  variant,
+  isDisable,
   handleChange,
   name,
   ...rest
 }) => {
   return (
     <button
-      className={clsx(
-        'button',
-        className,
-        type == 'primary' ? 'btn-primary' :
-          type == 'secondary' ? 'btn-secondary' :
-            "null")
-      }
+      className={clsx("button", className, {
+        ["btn-primary"]: variant == "primary",
+        ["btn-secondary"]: variant == "secondary",
+        ["btn-third"]: variant == "third",
+      })}
       type={type}
-      disabled={disabled}
       id={id}
       name={name}
+      disabled={isDisable}
       onClick={handleChange}
       value={value}
       {...rest}
     >
       {children}
     </button>
-  )
-}
+  );
+};

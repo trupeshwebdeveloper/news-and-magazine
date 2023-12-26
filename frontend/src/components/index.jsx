@@ -10,4 +10,5 @@ export * from "./ProfileCard";
 export * from "./swiper";
 export * from "./Title";
 export * from "./Form";
+export * from "./PostCard";
 // export * from "./ToDoTask";

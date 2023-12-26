@@ -8,7 +8,7 @@ export const ToDoLists = () => {
   const [todos, setTodos] = useState([]);
 
   const addTask = (Task) => {
-    setTodos((prev) => [...prev, { key: Date.now(), ...Task }]);
+    setTodos((prev) => [{ key: Date.now(), ...Task }, ...prev]);
   };
 
   const editTask = (key, Task) => {
@@ -18,25 +18,25 @@ export const ToDoLists = () => {
   };
 
   const deleteTask = (key) => {
-    setTodos((prev) => prev.filter((Task) => Task.id !== key));
+    setTodos((prev) => prev.filter((Task) => Task.key !== key));
   };
 
   const completedTask = (key) => {
     setTodos((prev) =>
-      prev.map((prevTask) => {
+      prev.map((prevTask) =>
         prevTask.key === key
           ? { ...prevTask, completed: !prevTask.completed }
-          : prevTask;
-      })
+          : prevTask
+      )
     );
   };
 
-  // useEffect(() => {
-  //   const GetToDoTask = JSON.parse(localStorage.getItem("ToDoLists"));
-  //   if (GetToDoTask && GetToDoTask.length > 0) {
-  //     setTodos(todos);
-  //   }
-  // });
+  useEffect(() => {
+    const todos = JSON.parse(localStorage.getItem("ToDoLists"));
+    if (todos && todos.length > 0) {
+      setTodos(todos);
+    }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("ToDoLists", JSON.stringify(todos));
@@ -63,9 +63,9 @@ export const ToDoLists = () => {
           </div>
           <div className="flex flex-wrap gap-y-3">
             {/*Loop and Add TodoItem here */}
-            {todos.map((content) => (
-              <div key={content.key} className="w-full">
-                <ToDoItem task={todos} />
+            {todos.map((task) => (
+              <div key={task.key} className="w-full">
+                <ToDoItem task={task} />
               </div>
             ))}
           </div>

@@ -1,6 +1,6 @@
-import { Container, Input } from "../../";
+import { Button, Container, Input } from "../../";
 import { useState } from "react";
-import { useTodo } from "../../../context/ToDoContext";
+import { useTodo } from "../../../context/ToDoContext.jsx";
 
 export const ToDoFrom = () => {
   const [task, setTask] = useState("");
@@ -14,6 +14,7 @@ export const ToDoFrom = () => {
       task,
       completed: false,
     });
+    setTask("");
   };
 
   return (
@@ -27,12 +28,9 @@ export const ToDoFrom = () => {
           value={task}
           onChange={(e) => setTask(e.target.value)}
         />
-        <button
-          type="submit"
-          className="rounded-r-lg px-3 py-1 bg-green-600 text-dark bg-primary shrink-0"
-        >
+        <Button variant="primary" type="submit">
           Add
-        </button>
+        </Button>
       </form>
     </Container>
   );

@@ -1,25 +1,20 @@
+import { Button } from "../../";
 import { useState } from "react";
 import { useTodo } from "../../../context/ToDoContext";
 
 export const ToDoItem = ({ task }) => {
   const [isEditable, setIsEditable] = useState(false);
   const [taskMsg, setTaskMsg] = useState(task.task);
-
-  const { editTask, completedTask } = useTodo();
+  const { editTask, completedTask, deleteTask } = useTodo();
 
   const newTask = () => {
-    // editTask(task.key, { ...task, task: taskMsg });
+    editTask(task.key, { ...task, task: taskMsg });
     setIsEditable(false);
-    console.log("newTask", editTask(...task, task.key));
   };
 
   const toggleTask = () => {
     completedTask(task.key);
   };
-
-  // const removeTask = () => {
-  //   deleteTask(task.key);
-  // };
 
   return (
     <div
@@ -35,17 +30,18 @@ export const ToDoItem = ({ task }) => {
       />
       <input
         type="text"
-        className={`border outline-none w-full bg-transparent rounded-lg ${
-          isEditable ? "border-black/10 px-2" : "border-transparent"
-        } ${task.completed ? "line-through" : ""}`}
+        className={`border outline-none w-full bg-transparent rounded-lg
+        ${isEditable ? "border-black/10 px-2" : "border-transparent"}
+        ${task.completed ? "line-through" : ""} 
+        `}
         value={taskMsg}
         onChange={(e) => setTaskMsg(e.target.value)}
         readOnly={!isEditable}
       />
       {/* Edit, Save Button */}
-      <button
-        className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 disabled:opacity-50"
-        onClick={() => {
+      <Button
+        variant="secondary"
+        handleChange={() => {
           if (task.completed) return;
 
           if (isEditable) {
@@ -55,14 +51,11 @@ export const ToDoItem = ({ task }) => {
         disabled={task.completed}
       >
         {isEditable ? "📁" : "✏️"}
-      </button>
+      </Button>
       {/* Delete Todo Button */}
-      {/* <button
-        className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0"
-        onClick={() => removeTask(task.key)}
-      >
+      <Button variant="secondary" handleChange={() => deleteTask(task.key)}>
         ❌
-      </button> */}
+      </Button>
     </div>
   );
 };
