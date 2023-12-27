@@ -40,6 +40,7 @@ export default {
       dark: "#000000",
       secondary: "#FC4308",
       gray: "#F5F5F5",
+      'light-white': "#E1E1E1",
       tinge: "#e6e6e6",
       transparent: "transparent",
       "primary-75": "rgba(248, 21, 57, 0.75)",

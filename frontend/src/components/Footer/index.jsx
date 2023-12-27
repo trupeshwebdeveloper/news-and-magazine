@@ -1,29 +1,6 @@
-import { Link } from "react-router-dom"
-import { Container, Title } from "../"
-import { FooterCategories, footerInstagram } from "../../utility"
-
-export const abc = [
-  {
-    key: 1,
-    title: 'ellsmartx',
-    children: 'how nice does this look 😍 I feel it should be delicious, thank you',
-  },
-  {
-    key: 2,
-    title: 'cassia',
-    children: 'Take a rest, ill be cheer up you again in 2 next game go go go',
-  },
-  {
-    key: 3,
-    title: 'amanda',
-    children: 'you were stunning today, jan! 💗 great match 👍🏽👍🏽',
-  },
-  {
-    key: 4,
-    title: 'Denis Simonassi',
-    children: 'It was a great match today Janzi! You did great😉🇩🇪',
-  },
-]
+import { Link } from "react-router-dom";
+import { Container, Title } from "../";
+import { FooterCategories, footerCommit, footerInstagram } from "../../utility";
 
 export const Footer = () => {
   return (
@@ -34,14 +11,24 @@ export const Footer = () => {
             <div className="grid grid-cols-2 gap-y-8 gap-x-28">
               <div>
                 <Title>mega news</Title>
-                <p className="text-justify text-black-75 leading-5 capitalize h5 xl tracking-[0.25px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Morbi tristique senectus et netus. Mattis pellentesque id nibh tortor id aliquet lectus proin</p>
+                <p className="text-justify text-black-75 leading-5 capitalize h5 xl tracking-[0.25px]">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae
+                  congue mauris rhoncus aenean vel elit scelerisque. In egestas
+                  erat imperdiet sed euismod nisi porta lorem mollis. Morbi
+                  tristique senectus et netus. Mattis pellentesque id nibh
+                  tortor id aliquet lectus proin
+                </p>
               </div>
               <div>
                 <Title>Categories</Title>
                 <ul className="grid gap-4">
                   {FooterCategories.map((content, index) => (
                     <li key={index}>
-                      <Link to={content.link} className="capitalize">{content.children}</Link>
+                      <Link to={`categories/${content.children}`} className="capitalize">
+                        {content.children}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -54,14 +41,18 @@ export const Footer = () => {
               </div>
             </div>
             <div className="bg-black-5 grid grid-cols-3 gap-2 p-3 rounded-xl">
-              <p className="small capitalize text-black-75 col-span-2">privacy policy | terms & conditions</p>
-              <p className="small capitalize text-black-75 justify-self-end">all copyright (c) 2022 reserved</p>
+              <p className="small capitalize text-black-75 col-span-2">
+                privacy policy | terms & conditions
+              </p>
+              <p className="small capitalize text-black-75 justify-self-end">
+                all copyright (c) 2022 reserved
+              </p>
             </div>
           </div>
           <div className="py-10">
             <Title>new Comments</Title>
             <div className="grid gap-y-2">
-              {abc.map((content, index) => (
+              {footerCommit.map((content, index) => (
                 <div className="bg-gray capitalize p-4 rounded-xl" key={index}>
                   <h5 className="font-medium mb-2">{content.title}</h5>
                   <p className="small font-normal">{content.children}</p>
@@ -74,7 +65,11 @@ export const Footer = () => {
             <div className="grid grid-cols-3 gap-6">
               {footerInstagram.map((content, index) => (
                 <div key={index} className="ratio">
-                  <img src={content.images} className="rounded-xl" alt={content.alt} />
+                  <img
+                    src={content.images}
+                    className="rounded-xl"
+                    alt={content.alt}
+                  />
                 </div>
               ))}
             </div>
@@ -82,5 +77,5 @@ export const Footer = () => {
         </div>
       </Container>
     </footer>
-  )
-}
+  );
+};

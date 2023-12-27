@@ -35,7 +35,7 @@ export const ContactUs = () => {
             </div>
             <div className="flex justify-end mt-6">
               <Button className="py-3 px-4" variant="primary">
-                {Icons.SaveIcon}save
+                {Icons.SendIcon}save
               </Button>
             </div>
           </form>

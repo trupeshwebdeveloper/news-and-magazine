@@ -8,7 +8,7 @@ export const RatioImages = ({
   ...rest
 }) => {
   return (
-    <div className={clsx(RatioImagesParentClass, "ratio")}>
+    <div className={clsx(RatioImagesParentClass, "ratio flex-[0_0_auto]")}>
       <img
         src={src}
         alt={alt}

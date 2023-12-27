@@ -1,7 +1,7 @@
 import clsx from "clsx"
 import { categories1, categories2, categories3, categories4, categories5, categories6 } from "../../../assets/img"
 
-export const Categories = ({
+export const CategoriesSubMenu = ({
   className
 }) => {
   return (

@@ -14,7 +14,7 @@ import {
   TextEditor,
 } from "../../components";
 import { BreadcrumbDemo, HasTagDemo, Icons, recentPost } from "../../utility";
-import { TextArea } from "../../components/Form";
+import { TextArea, UploadPicture } from "../../components/Form";
 import { avater1, avater2 } from "../../assets/img";
 import { SwiperSlide } from "swiper/react";
 // import { Grid } from 'swiper/modules';
@@ -276,6 +276,7 @@ export const StyleSheet = () => {
               placeholder={"hello"}
             />
             <TextEditor label="TextEditor" />
+            <UploadPicture />
           </div>
         </div>
 
